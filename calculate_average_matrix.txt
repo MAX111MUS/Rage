@@ -1,0 +1,34 @@
+import numpy as np
+
+def calculate_average_matrix(matrix):
+    # Transpose the matrix
+    transposed_matrix = np.transpose(matrix)
+
+    # Calculate the row averages
+    row_averages = np.mean(matrix, axis=1)
+
+    # Calculate the column averages
+    column_averages = np.mean(transposed_matrix, axis=1)
+
+    # Calculate the overall average of the matrix
+    overall_average = np.mean(matrix)
+
+    # Create a dictionary to store the results
+    result = {
+        'row_averages': row_averages,
+        'column_averages': column_averages,
+        'overall_average': overall_average
+    }
+
+    return result
+
+# Create a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Calculate the average matrix using the function
+average_matrix = calculate_average_matrix(matrix)
+
+# Print the results
+print("Row averages:", average_matrix['row_averages'])
+print("Column averages:", average_matrix['column_averages'])
+print("Overall average:", average_matrix['overall_average'])
